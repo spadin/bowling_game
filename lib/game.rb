@@ -9,7 +9,11 @@ module Bowling
     end
 
     def score
-      @rolls.inject(:+)
+      score = 0
+      @rolls.each_with_index do |pins, index|
+        score += pins
+      end
+      score
     end
   end
 end
