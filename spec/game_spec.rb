@@ -15,6 +15,10 @@ module Bowling
       game.roll(5)
     end
 
+    def roll_strike
+      game.roll(10)
+    end
+
     it "calculates a gutter game" do
       roll_many(20, 0)
       game.score.should be 0
@@ -33,7 +37,7 @@ module Bowling
     end
 
     it "calculates the score after a strike in the first frame, followed by three and then four pins, followed by all misses" do
-      game.roll(10)
+      roll_strike
       game.roll(3)
       game.roll(4)
       game.score.should be 24
