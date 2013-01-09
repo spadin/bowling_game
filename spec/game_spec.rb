@@ -19,5 +19,13 @@ module Bowling
       roll_many(20, 1)
       game.score.should be 20
     end
+
+    it "calculates the score after a spare in the first frame, followed by three pins, followed by all misses" do
+      game.roll(5)
+      game.roll(5)
+      game.roll(3)
+      roll_many(17, 0)
+      game.score.should be 16
+    end
   end
 end
