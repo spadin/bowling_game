@@ -19,6 +19,12 @@ module Bowling
       game.roll(10)
     end
 
+    def roll_perfect_game
+      12.times do
+        roll_strike
+      end
+    end
+
     it "calculates a gutter game" do
       roll_many(20, 0)
       game.score.should be 0
@@ -44,9 +50,7 @@ module Bowling
     end
 
     it "calculates the score for a perfect game" do
-      12.times do
-        roll_strike
-      end
+      roll_perfect_game
     end
   end
 end
