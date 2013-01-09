@@ -42,5 +42,11 @@ module Bowling
       game.roll(4)
       game.score.should be 24
     end
+
+    it "calculates the score for a perfect game" do
+      12.times do
+        roll_strike
+      end
+    end
   end
 end
