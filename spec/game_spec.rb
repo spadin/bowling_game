@@ -51,6 +51,7 @@ module Bowling
 
     it "calculates the score for a perfect game" do
       roll_perfect_game
+      game.score.should be 300
     end
   end
 end
